@@ -30,7 +30,8 @@ io.on('connect',
         setTimeout(function run() {
             i += 1;
 
-            io.emit('train01', trainSampleData());
+            //io.emit('train01', trainSampleData());
+            io.emit('train01', 'hello');
 
             setTimeout(run, 5000);
         }, 1000);
