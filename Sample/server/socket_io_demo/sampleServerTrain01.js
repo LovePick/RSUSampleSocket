@@ -5,6 +5,11 @@ var io = require('socket.io')(http);
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/sampleListeningTrain01.html');
 });
+
+app.get('/hello', function (req, res) {
+    res.send('Hello World!!!')
+});
+
 var i = 0
 
 io.on('connect',
@@ -12,12 +17,12 @@ io.on('connect',
         console.log('a user connected');
         //socket.broadcast.emit('ready connected to server');
 
-        /*
+
         socket.on('chat message', function (msg) {
             console.log('message: ' + msg);
             io.emit('chat message', msg);
         });
-*/
+
 
         socket.on('train01', function (msg) {
             console.log('message: ' + msg);
